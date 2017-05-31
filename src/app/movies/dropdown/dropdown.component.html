@@ -1,0 +1,13 @@
+<p>
+	dropdown works!
+</p>
+<div>
+	<div><span>{{service.name}}:</span><span *ngIf="selectedItem">{{selectedItem.display}}</span></div>
+	<ul>
+		<li *ngFor="let item of items;" (click)="selectItem(item)" [class.selected]="selectedItem == item">
+			<div>value: {{item.value}}</div>
+			<div>display: {{item.display}}</div>
+			<div>image: {{item.image}}</div>
+		</li>
+	</ul>
+</div>
