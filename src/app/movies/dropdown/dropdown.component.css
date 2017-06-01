@@ -1,0 +1,60 @@
+.container {
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.title {
+	display: block;
+	width: 100%;
+	position: relative;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 5px 30px 5px 5px;
+	border: 1px solid #cccccc;
+	background: #e6e6e6;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.collapsed .title {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	transition: border-bottom-right-radius .5s, border-bottom-left-radius .5s, box-shadow .5s;
+	transition-delay: .4s;
+	box-shadow: none;
+}
+
+ul {
+	max-height: 150px;
+	transition: max-height .5s ease;
+	background: #e6e6e6;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	overflow: auto;
+}
+.collapsed ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .5s ease, visibility .5s;
+	visibility: hidden;
+}
+ul li:first-child {
+	border-top: none;
+}
+ul li {
+	border-top: 1px solid #cccccc;
+	padding: 5px 10px;
+}
+ul li:hover {
+	background-color: #d9d9d9;
+}
+.selected-item {
+	font-weight: normal;
+	padding-left: 10px;
+}

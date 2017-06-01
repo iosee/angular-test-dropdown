@@ -1,10 +1,9 @@
-<p>
-	dropdown works!
-</p>
-<div>
-	<div><span>{{service.name}}:</span><span *ngIf="selectedItem">{{selectedItem.display}}</span></div>
+<div class="container" [class.collapsed]="closed">
+	<div (click)="toggleList()" class="title"><span>{{service.name}}:</span><span class="selected-item">{{selectedItem ? selectedItem.display : emptyText}}</span></div>
 	<ul>
-		<li *ngFor="let item of items;" (click)="selectItem(item)" [class.selected]="selectedItem == item">
+		<li *ngFor="let item of items;"
+			(click)="selectItem(item)"
+			[class.selected]="selectedItem == item"  >
 			<div>value: {{item.value}}</div>
 			<div>display: {{item.display}}</div>
 			<div>image: {{item.image}}</div>
