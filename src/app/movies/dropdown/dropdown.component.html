@@ -1,12 +1,25 @@
-<div class="container" [class.collapsed]="closed">
-	<div (click)="toggleList()" class="title"><span>{{service.name}}:</span><span class="selected-item">{{selectedItem ? selectedItem.display : emptyText}}</span></div>
+<div class="container" [class.expanded]="!closed">
+	<div (click)="toggleList()" class="title">
+		<div class="header">{{service.name}}:</div>
+		<div *ngIf="selectedItem" class="selected-item">
+			<div class="selected-image"><img src="{{service.imageBase + selectedItem.image}}" /></div>
+			<div class="selected-title">{{selectedItem.display}}</div>
+			<div class="clear-icon" (click)="clearSelection()"></div>
+		</div>
+		<div *ngIf="!selectedItem" class="empty-text">{{!closed ? '' : emptyText}}</div>
+	</div>
 	<ul>
 		<li *ngFor="let item of items;"
 			(click)="selectItem(item)"
-			[class.selected]="selectedItem == item"  >
-			<div>value: {{item.value}}</div>
-			<div>display: {{item.display}}</div>
-			<div>image: {{item.image}}</div>
+			[class.selected]="selectedItem == item">
+			<div class="item-inner">
+				<div *ngIf="item.image" class="item-image">
+					<img src="{{service.imageBase + item.image}}" />
+				</div>
+				<div class="item-text">
+					{{item.display}}
+				</div>
+			</div>
 		</li>
 	</ul>
 </div>

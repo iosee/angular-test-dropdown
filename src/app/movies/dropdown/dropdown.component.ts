@@ -30,4 +30,8 @@ export class DropdownComponent implements OnInit {
 	toggleList(): void {
 		this.closed = !this.closed;
 	}
+
+	clearSelection(): void {
+		this.selectedItem = null;
+	}
 }

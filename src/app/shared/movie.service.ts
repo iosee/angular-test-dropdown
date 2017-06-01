@@ -10,10 +10,11 @@ import "rxjs/add/operator/mergeMap";
 
 @Injectable()
 export class MovieService implements DropdownSource {
-	name: string = 'Movie';
+	public name: string = 'Movie';
+	public imageBase: string = 'https://image.tmdb.org/t/p/w45_and_h67_bestv2/';
 	private apiKey: string = 'bc1e195159f0ee0de39c6de5fb2234b9';
 	private serviceUrl: string = 'https://api.themoviedb.org/3/movie/popular';
-	private headers: Headers = new Headers({'Content-Type': 'application/json'});
+
 
 	constructor(private http: Http) {
 	}
