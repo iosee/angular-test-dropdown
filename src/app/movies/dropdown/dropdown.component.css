@@ -173,12 +173,12 @@ ul li:hover {
 
 .item-inner .item-image {
 	padding: 5px;
+	min-height: 61px;
 }
 
 .item-inner .item-image img {
 	border: 1px solid #fff;
 	width: 35px;
-	height: 100%;
 }
 
 .item-text {
