@@ -188,7 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent(movieService) {
         this.movieService = movieService;
-        this.title = 'Movie Dropdown Exercise';
+        this.title = 'Interview Exercise: Dropdown Component';
     }
     return AppComponent;
 }());
