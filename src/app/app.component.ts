@@ -7,9 +7,8 @@ import {MovieService} from "app/shared/movie.service";
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	title = 'Movie Dropdown Exercise';
+	title = 'Interview Exercise: Dropdown Component';
 
 	constructor(private movieService: MovieService) {
-
 	}
 }
