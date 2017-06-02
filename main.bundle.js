@@ -293,6 +293,7 @@ var DropdownComponent = (function () {
     };
     DropdownComponent.prototype.clearSelection = function () {
         this.selectedItem = null;
+        event.stopPropagation();
     };
     return DropdownComponent;
 }());
