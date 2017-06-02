@@ -33,5 +33,6 @@ export class DropdownComponent implements OnInit {
 
 	clearSelection(): void {
 		this.selectedItem = null;
+		event.stopPropagation();
 	}
 }
